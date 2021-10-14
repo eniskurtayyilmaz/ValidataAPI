@@ -1,4 +1,4 @@
-﻿FROM mcr.microsoft.com/dotnet/core/sdk:3.0-alpine AS build
+﻿FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /app
 COPY *.sln .
 COPY src/ValidataAPI.Api/*.csproj ./src/ValidataAPI.Api/
@@ -31,7 +31,7 @@ FROM build AS publish
 WORKDIR /app/src/ValidataAPI.Api
 RUN dotnet publish -c Release -o out
 # run the api
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.0-alpine AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:5.0  AS runtime
 WORKDIR /app
 COPY --from=publish /app/src/ValidataAPI.Api/out ./
 EXPOSE 80

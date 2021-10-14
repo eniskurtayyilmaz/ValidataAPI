@@ -16,7 +16,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ValidataAPI.API\ValidataAPI.API.csproj" />
+    <ProjectReference Include="..\..\src\ValidataAPI.Api\ValidataAPI.Api.csproj" />
     <ProjectReference Include="..\..\src\ValidataAPI.Utils\ValidataAPI.Utils.csproj" />
   </ItemGroup>
 
