@@ -18,7 +18,6 @@ namespace ValidataAPI.Api
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                // .UseServiceProviderFactory(new AutofacServiceProviderFactory())
                 .ConfigureLogging(config => { config.ClearProviders(); })
                 .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
     }

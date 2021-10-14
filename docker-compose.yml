@@ -1,0 +1,27 @@
+version: "3.4"
+
+services:
+   validatadb:
+     container_name: validatadb
+     image: mcr.microsoft.com/mssql/server:2017-latest
+     environment:
+       SA_PASSWORD: "yourStrong(!)Password"
+       ACCEPT_EULA: "Y"
+     restart: always
+     ports:
+       - "1433:1433"
+   
+   validataapi:
+    container_name: validataapi
+    image: ${DOCKER_REGISTRY-}validataapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:AppDbContext=Server=validatadb;Database=validataapidb;User=sa;Password=yourStrong(!)Password;Trusted_Connection=False;"
+    depends_on:
+      - validatadb
+    ports:
+      - "5000:80"
+
