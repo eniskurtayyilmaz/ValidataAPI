@@ -1,11 +1,19 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "hello"
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+   "currencies":[
+      {
+         "id":"usd",
+         "date":"2021-10-26T14.12:13.000",
+         "buying":9.7362,
+         "selling":9.7537
+      },
+     {
+         "id":"eur",
+         "date":"2021-10-26T14.12:13.000",
+         "buying":11.7362,
+         "selling":11.7537
+      }
+   ],
+   "profile":{
+      "name":"typicode"
+   }
 }
